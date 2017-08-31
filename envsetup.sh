@@ -134,16 +134,16 @@ function check_product()
     fi
 
     if (echo -n $1 | grep -q -e "^dosp_") ; then
-        VIPER_BUILD=$(echo -n $1 | sed -e 's/^dosp_//g')
-        export BUILD_NUMBER=$( (date +%s%N ; echo $VIPER_BUILD; hostname) | openssl sha1 | sed -e 's/.*=//g; s/ //g' | cut -c1-10 )
+        DOSP_BUILD=$(echo -n $1 | sed -e 's/^dosp_//g')
+        export BUILD_NUMBER=$( (date +%s%N ; echo $DOSP_BUILD; hostname) | openssl sha1 | sed -e 's/.*=//g; s/ //g' | cut -c1-10 )
     elif (echo -n $1 | grep -q -e "^dosp_") ; then
         # Fall back to dosp_<product>
-        VIPER_BUILD=$(echo -n $1 | sed -e 's/^dosp_//g')
-        export BUILD_NUMBER=$( (date +%s%N ; echo $VIPER_BUILD; hostname) | openssl sha1 | sed -e 's/.*=//g; s/ //g' | cut -c1-10 )
+        DOSP_BUILD=$(echo -n $1 | sed -e 's/^dosp_//g')
+        export BUILD_NUMBER=$( (date +%s%N ; echo $DOSP_BUILD; hostname) | openssl sha1 | sed -e 's/.*=//g; s/ //g' | cut -c1-10 )
     else
-        VIPER_BUILD=
+        DOSP_BUILD=
     fi
-    export VIPER_BUILD
+    export DOSP_BUILD
 
         TARGET_PRODUCT=$1 \
         TARGET_BUILD_VARIANT= \
@@ -572,7 +572,7 @@ function print_lunch_menu()
         i=$(($i+1))
     done | column
 
-    if [ "z${VIPER_DEVICES_ONLY}" != "z" ]; then
+    if [ "z${DOSP_DEVICES_ONLY}" != "z" ]; then
        echo "... and don't forget the bacon!"
     fi
 
