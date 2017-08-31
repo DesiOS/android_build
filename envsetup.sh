@@ -549,12 +549,12 @@ function print_lunch_menu()
     tput setaf 6;
     tput bold;
 
-    echo "           ▌ ▐·▪   ▄▄▄·▄▄▄ .▄▄▄        .▄▄ ·     "
-    echo "          ▪█·█▌██ ▐█ ▄█▀▄.▀·▀▄ █·▪     ▐█ ▀.     "
-    echo "          ▐█▐█•▐█· ██▀·▐▀▀▪▄▐▀▀▄  ▄█▀▄ ▄▀▀▀█▄    "
-    echo "           ███ ▐█▌▐█▪·•▐█▄▄▌▐█•█▌▐█▌.▐▌▐█▄▪▐█    "
-    echo "          . ▀  ▀▀▀.▀    ▀▀▀ .▀  ▀ ▀█▄▀▪ ▀▀▀▀     "
-    echo "              Feel the venom in your vein        "
+    echo " ██ ██████         ██ ██       ██ ██ ██    ██ ████     "
+    echo " ██       ██    ██       ██    ██          ██     ██   "
+    echo " ██       ██    ██       ██    ██ ██ ██    ██ ████     "
+    echo " ██       ██    ██       ██          ██    ██          "
+    echo " ██ ██████         ██ ██       ██ ██ ██    ██          "
+    echo "                     Explore Desi Stuff                "
     tput sgr0;
     echo ""
     echo "              Welcome to the device menu           "
