@@ -164,7 +164,7 @@ endif # unbundled_goals
 
 # Default to building dalvikvm on hosts that support it...
 ifeq ($(HOST_OS),linux)
-# ... or if the if the option is already set
+# .. or if the if the option is already set
 ifeq ($(WITH_HOST_DALVIK),)
   WITH_HOST_DALVIK := true
 endif
@@ -180,11 +180,11 @@ include $(BUILD_SYSTEM)/product.mk
 include $(BUILD_SYSTEM)/device.mk
 
 # A CM build needs only the CM product makefiles.
-ifneq ($(VIPER_BUILD),)
-  all_product_configs := $(shell find device -path "*/$(VIPER_BUILD)/viper.mk")
+ifneq ($(DOSP_BUILD),)
+  all_product_configs := $(shell find device -path "*/$(DOSP_BUILD)/dosp.mk")
   ifeq ($(all_product_configs),)
-    # Fall back to viper.mk
-    all_product_configs := $(shell find device -path "*/$(VIPER_BUILD)/viper.mk")
+    # Fall back to dosp.mk
+    all_product_configs := $(shell find device -path "*/$(DOSP_BUILD)/dosp.mk")
   endif
 else
   ifneq ($(strip $(TARGET_BUILD_APPS)),)
@@ -196,9 +196,9 @@ else
     # files in the tree.
     all_product_configs := $(get-all-product-makefiles)
   endif # TARGET_BUILD_APPS
-endif # VIPER_BUILD
+endif # DOSP_BUILD
 
-ifeq ($(VIPER_BUILD),)
+ifeq ($(DOSP_BUILD),)
 # Find the product config makefile for the current product.
 # all_product_configs consists items like:
 # <product_name>:<path_to_the_product_makefile>
